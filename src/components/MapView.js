@@ -2,77 +2,64 @@ import React, { Component } from 'react';
 import geoData from '../static/world-50m.json'
 import {
   ComposableMap,
-  ZoomableGroup,
+  ZoomableGlobe,
   Geographies,
   Geography,
   Graticule,
 } from "react-simple-maps"
-import { geoPolyhedralWaterman } from 'd3-geo-polygon'
+import { geoPath } from "d3-geo"
 
-const wrapperStyles = {
+
+const mapStyles = {
   width: "100%",
-  maxWidth: 1200,
+  maxWidth: 980,
   margin: "0 auto",
 }
 
-class MapView extends Component {
-  projection(width, height, config) {
-    return geoPolyhedralWaterman()
-      .rotate(config.rotation)
-      .scale(config.scale)
-  }
-  render() {
-    return (
-      <div style={wrapperStyles}>
-        <ComposableMap
-          projection={this.projection}
-          projectionConfig={{
-            scale: 100,
-            rotation: [20, 0],
-          }}
-          width={980}
-          height={551}
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
-          >
-          <ZoomableGroup center={[0,0]} disablePanning>
-            <Geographies geography={geoData}>
-              {(geographies, projection) => geographies.map((geography, i) => geography.id !== "ATA" && (
-                <Geography
-                  key={i}
-                  geography={geography}
-                  projection={projection}
-                  style={{
-                    default: {
-                      fill: "#000",
-                      stroke: "#FFF",
-                      strokeWidth: 0.75,
-                      outline: "none",
-                    },
-                    hover: {
-                      fill: "#FFF",
-                      stroke: "#000",
-                      strokeWidth: 0.75,
-                      outline: "none",
-                    },
-                    pressed: {
-                      fill: "#FF5722",
-                      stroke: "#607D8B",
-                      strokeWidth: 0.75,
-                      outline: "none",
-                    },
-                  }}
-                />
-              ))}
-            </Geographies>
-            <Graticule />
-          </ZoomableGroup>
-        </ComposableMap>
-      </div>
-    )
-  }
-}
+const MapView = () => (
+  <div>
+    <ComposableMap
+      width={500}
+      height={500}
+      projection="orthographic"
+      projectionConfig={{ scale: 220 }}
+      style={mapStyles}
+    >
+      <ZoomableGlobe>
+        <circle cx={250} cy={250} r={220} fill="transparent" stroke="#CFD8DC" />
+        <Geographies
+          disableOptimization
+          geography={geoData}
+        >
+          {(geos, proj) =>
+            geos.map((geo, i) => (
+              <Geography
+                key={geo.id + i}
+                geography={geo}
+                projection={proj}
+                style={{
+                  default: {
+                    fill: "#000",
+                    stroke: "#FFF"
+                  },
+                   hover: {
+                     fill: "#FFF",
+                     stroke: "#000"
+                   },
+                   pressed: {
+                     fill: "#FFF",
+                     stroke: "#000",
+                     outline: "none"
+                   }
+                }}
+              />
+            ))
+          }
+        </Geographies>
+        <Graticule globe={true} />
+      </ZoomableGlobe>
+    </ComposableMap>
+  </div>
+)
 
 export default MapView

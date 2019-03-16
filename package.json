@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "d3-geo": "^1.11.3",
     "d3-geo-polygon": "^1.7.0",
     "d3-geo-projection": "^2.6.0",
     "react": "^16.8.4",
