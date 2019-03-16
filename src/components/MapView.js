@@ -5,22 +5,30 @@ import {
   ZoomableGroup,
   Geographies,
   Geography,
+  Graticule,
 } from "react-simple-maps"
+import { geoPolyhedralWaterman } from 'd3-geo-polygon'
 
 const wrapperStyles = {
   width: "100%",
-  maxWidth: 980,
+  maxWidth: 1200,
   margin: "0 auto",
 }
 
 class MapView extends Component {
+  projection(width, height, config) {
+    return geoPolyhedralWaterman()
+      .rotate(config.rotation)
+      .scale(config.scale)
+  }
   render() {
     return (
       <div style={wrapperStyles}>
         <ComposableMap
+          projection={this.projection}
           projectionConfig={{
-            scale: 205,
-            rotation: [-11,0,0],
+            scale: 100,
+            rotation: [20, 0],
           }}
           width={980}
           height={551}
@@ -29,7 +37,7 @@ class MapView extends Component {
             height: "auto",
           }}
           >
-          <ZoomableGroup center={[0,20]} disablePanning>
+          <ZoomableGroup center={[0,0]} disablePanning>
             <Geographies geography={geoData}>
               {(geographies, projection) => geographies.map((geography, i) => geography.id !== "ATA" && (
                 <Geography
@@ -38,8 +46,8 @@ class MapView extends Component {
                   projection={projection}
                   style={{
                     default: {
-                      fill: "#FFF",
-                      stroke: "#000",
+                      fill: "#000",
+                      stroke: "#FFF",
                       strokeWidth: 0.75,
                       outline: "none",
                     },
@@ -59,6 +67,7 @@ class MapView extends Component {
                 />
               ))}
             </Geographies>
+            <Graticule />
           </ZoomableGroup>
         </ComposableMap>
       </div>
