@@ -3,15 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "d3": "^5.9.2",
     "d3-geo": "^1.11.3",
     "d3-geo-polygon": "^1.7.0",
     "d3-geo-projection": "^2.6.0",
     "react": "^16.8.4",
+    "react-autosuggest": "^9.4.3",
     "react-dom": "^16.8.4",
     "react-redux": "^6.0.1",
     "react-scripts": "2.1.8",
     "react-simple-maps": "^0.12.1",
     "redux": "^4.0.1",
+    "topojson": "^3.0.2",
     "typescript": "^3.3.3333"
   },
   "scripts": {
