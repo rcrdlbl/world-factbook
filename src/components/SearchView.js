@@ -66,6 +66,11 @@ class SearchView extends Component {
         highlightFirstSuggestion={true}
         renderSuggestion={renderSuggestion}
         inputProps={inputProps}
+        theme={{
+          suggestionHighlighted: {
+            color: 'red'
+          }
+        }}
       />
     )
     }
