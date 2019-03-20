@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest'
 import countryNames from '../static/country-names'
+import { Redirect } from 'react-router-dom'
 
 
 const getSuggestions = value => {
@@ -47,8 +48,13 @@ class SearchView extends Component {
     })
   }
 
+  onSuggestionSelected = (event, {suggestion}) => {
+    console.log(suggestion)
+    const countryUrl = '/countries/' + suggestion['country-code']
+    window.location.replace(countryUrl)
+  }
+
   render() {
-    debugger
     const { value, suggestions } = this.state
 
     const inputProps = {
@@ -71,6 +77,7 @@ class SearchView extends Component {
             color: 'red'
           }
         }}
+        onSuggestionSelected={this.onSuggestionSelected}
       />
     )
     }
