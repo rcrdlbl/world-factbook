@@ -64,6 +64,11 @@ select {
   font-family: sans-serif;
 }
 
+.countryflag {
+  height: 250px;
+  width: auto;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

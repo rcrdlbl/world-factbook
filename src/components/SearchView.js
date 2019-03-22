@@ -50,7 +50,7 @@ class SearchView extends Component {
 
   onSuggestionSelected = (event, {suggestion}) => {
     console.log(suggestion)
-    const countryUrl = '/countries/' + suggestion['country-code']
+    const countryUrl = '/countries/' + suggestion['alpha-3']
     window.location.replace(countryUrl)
   }
 
