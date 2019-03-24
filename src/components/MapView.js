@@ -25,7 +25,7 @@ const MapView = (props) => (
       projectionConfig={{ scale: 220 }}
       style={mapStyles}
     >
-      <ZoomableGlobe center={props.center}>
+      <ZoomableGlobe center={props.mapCenter ? props.mapCenter.reverse() : [0,0]}>
         <circle cx={250} cy={250} r={220} fill="transparent" stroke="#CFD8DC" />
         <Geographies
           disableOptimization
@@ -62,5 +62,9 @@ const MapView = (props) => (
     </ComposableMap>
   </div>
 )
+
+MapView.defaultProps = {
+  center: [0, 0]
+}
 
 export default MapView

@@ -65,8 +65,14 @@ select {
 }
 
 .countryflag {
-  height: 250px;
+  height: 2em;
   width: auto;
+  transform: skewX(-30deg);
+  padding-left: 1.75em;
+}
+
+.wikiextract {
+  font-size: 0.6em
 }
 
 @keyframes App-logo-spin {
