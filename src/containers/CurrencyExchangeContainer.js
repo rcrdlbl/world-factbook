@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { createCurrencyExchange } from '../redux/actions/visitActions'
+import { createCurrencyExchange, fetchExchanges } from '../redux/actions/visitActions'
 import CurrencyExchangeForm from '../components/CurrencyExchangeForm'
 import ExchangeView from '../components/ExchangeView'
+import PreviousExchange from '../components/PreviousExchange'
 
 class CurrencyExchangeContainer extends Component {
 
   state = {
     userCurrencyName: ''
+  }
+
+  componentDidMount() {
+    this.props.fetchExchanges(this.props.currency[0].code)
   }
 
   onCurrencyFormSubmit = (suggestion) => {
@@ -20,6 +25,14 @@ class CurrencyExchangeContainer extends Component {
     })
   }
 
+  renderPreviousExchanges() {
+    if (!this.props.exchanges) {
+      return <p>No Previous Exchanges</p>
+    } else {
+      return this.props.exchanges.map(exchange => <PreviousExchange exchange={exchange} />)
+    }
+  }
+
   render() {
     return (
       <div>
@@ -28,6 +41,8 @@ class CurrencyExchangeContainer extends Component {
         <p>equals</p>
         <ExchangeView userCurrencyName={this.state.userCurrencyName} exchange={this.props.exchange} />
         <CurrencyExchangeForm onCurrencyFormSubmit={this.onCurrencyFormSubmit} />
+        <p>Exchange History</p>
+        {this.renderPreviousExchanges()}
       </div>
     )
   }
@@ -42,7 +57,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createCurrencyExchange: (currencies) => dispatch(createCurrencyExchange(currencies))
+    createCurrencyExchange: (currencies) => dispatch(createCurrencyExchange(currencies)),
+    fetchExchanges: (countryCode) => dispatch(fetchExchanges(countryCode))
   }
 }
 
