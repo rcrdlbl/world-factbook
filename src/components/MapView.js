@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import geoData from '../static/world-50m.json'
 import {
   ComposableMap,
@@ -7,7 +7,6 @@ import {
   Geography,
   Graticule,
 } from "react-simple-maps"
-import { geoPath } from "d3-geo"
 
 
 const mapStyles = {

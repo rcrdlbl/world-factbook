@@ -1,7 +1,7 @@
 import React from 'react'
 import App from './App'
 import CountryContainer from './containers/CountryContainer'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 
 export const Routes = () => {

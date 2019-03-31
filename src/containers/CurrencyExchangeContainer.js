@@ -29,7 +29,7 @@ class CurrencyExchangeContainer extends Component {
     if (!this.props.exchanges) {
       return <p>No Previous Exchanges</p>
     } else {
-      return this.props.exchanges.map(exchange => <PreviousExchange exchange={exchange} />)
+      return this.props.exchanges.map(exchange => <PreviousExchange key={exchange.id} exchange={exchange} />)
     }
   }
 

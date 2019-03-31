@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest'
 import countryNames from '../static/country-names'
-import { Redirect } from 'react-router-dom'
 
 
 const getSuggestions = value => {

@@ -1,8 +1,6 @@
 const initialState = {
   exchanges: [],
   exchange: {},
-  userLocation: [],
-  userLocationLoaded: false
 }
 
 export default (state = initialState, action) => {
