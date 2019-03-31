@@ -1,42 +1,42 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react'
 import Autosuggest from 'react-autosuggest'
 import countryNames from '../static/country-names'
-import { Redirect } from 'react-router-dom'
-
 
 const getSuggestions = value => {
-  const inputValue = value.trim().toLowerCase();
-  const inputLength = inputValue.length;
+  const inputValue = value.trim().toLowerCase()
+  const inputLength = inputValue.length
 
   return inputLength === 0 ? [] : countryNames.filter(country =>
     country.name.toLowerCase().slice(0, inputLength) === inputValue
-  );
+  )
 }
 
-const getSuggestionValue = suggestion => suggestion.name;
+const getSuggestionValue = suggestion => suggestion.name
 
 const renderSuggestion = suggestion => (
   <div>
-    {suggestion.name} -- {suggestion["alpha-3"]}
+    {suggestion.name}
   </div>
 )
 
-class SearchView extends Component {
+
+class CurrencyExchangeForm extends Component {
   constructor() {
     super()
+
     this.state = {
       value: '',
       suggestions: []
     }
   }
 
-  onChange = (event, { newValue }) => {
+  onChange = (event, {newValue}) => {
     this.setState({
       value: newValue
     })
   }
 
-  onSuggestionsFetchRequested =({value}) => {
+  onSuggestionsFetchRequested = ({value}) => {
     this.setState({
       suggestions: getSuggestions(value)
     })
@@ -49,37 +49,36 @@ class SearchView extends Component {
   }
 
   onSuggestionSelected = (event, {suggestion}) => {
-    const countryUrl = '/countries/' + suggestion['alpha-3']
-    window.location.replace(countryUrl)
+    this.props.onCurrencyFormSubmit(suggestion['alpha-3'])
   }
 
   render() {
     const { value, suggestions } = this.state
 
     const inputProps = {
-      placeholder: 'Country',
+      placeholder: 'Enter Country',
       value,
       onChange: this.onChange
     }
 
-      return (
+    return (
       <Autosuggest
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
         getSuggestionValue={getSuggestionValue}
-        highlightFirstSuggestion={true}
         renderSuggestion={renderSuggestion}
-        inputProps={inputProps}
         theme={{
           suggestionHighlighted: {
             color: 'red'
           }
         }}
         onSuggestionSelected={this.onSuggestionSelected}
+        inputProps={inputProps}
       />
     )
   }
 }
 
-export default SearchView
+
+export default CurrencyExchangeForm

@@ -75,6 +75,22 @@ select {
   font-size: 0.6em
 }
 
+.reticle {
+  margin: 0 auto;
+  display: block;
+}
+
+.mapView {
+  margin: 0 auto;
+  display: block;
+}
+
+.countryGlobe {
+  display: flex;
+  align-items: center;
+  height: 100%
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
