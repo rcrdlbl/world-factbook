@@ -39,12 +39,12 @@ const MapView = (props) => (
                 onClick={props.handleGeographyClick}
                 style={{
                   default: {
-                    fill: "#000",
-                    stroke: "#FFF",
+                    fill: "#637079",
+                    stroke: "#CCD7DD",
                   },
                    hover: {
-                     fill: "#FFF",
-                     stroke: "#000"
+                     fill: "#CCD7DD",
+                     stroke: "#637079"
                    },
                    pressed: {
                      fill: "#FFF",
@@ -56,7 +56,7 @@ const MapView = (props) => (
             ))
           }
         </Geographies>
-        <Graticule globe={true} stroke={"#000"} outline={false} step={[10, 10]} />
+        <Graticule globe={true} stroke={"#637079"} outline={false} step={[10, 10]} />
       </ZoomableGlobe>
     </ComposableMap>
   </div>

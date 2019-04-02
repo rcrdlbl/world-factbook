@@ -1,73 +1,25 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #000;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.water {
-  fill: #00248F;
-}
-
-.land {
-  fill: #A98B6F;
-  stroke: #FFF;
-  stroke-width: 0.7px;
-}
-
-.land:hover {
-  fill:#33CC33;
-  stroke-width: 1px;
-}
 
 .focused {
   fill: #33CC33;
 }
 
-select {
-  position: absolute;
-  top: 20px;
-  left: 580px;
-  border: solid #ccc 1px;
-  padding: 3px;
-  box-shadow: inset 1px 1px 2px #ddd8dc;
+html {
+  background-color: #CCD7DD
 }
 
-.countryTooltip {
-  position: absolute;
-  display: none;
-  pointer-events: none;
-  background: #fff;
-  padding: 5px;
-  text-align: left;
-  border: solid #ccc 1px;
-  color: #666;
-  font-size: 14px;
-  font-family: sans-serif;
+div {
+  background-color: #CCD7DD;
+  color: #637079;
+}
+
+.countryBasic {
+  transform: skewY(15deg);
+  margin-top: 3rem;
 }
 
 .countryflag {
   height: 2em;
   width: auto;
-  transform: skewX(-30deg);
   padding-left: 1.75em;
 }
 
@@ -112,7 +64,7 @@ select {
 .countryGrid > div {
   display: flex;
   flex-basis: calc(50% - 40px);
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
 }
 
@@ -135,11 +87,7 @@ select {
 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wikiextract {
+  overflow-y: scroll;
+  max-height: 250px;
 }
