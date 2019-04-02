@@ -8,18 +8,6 @@ class MapContainer extends Component {
     searchTerm: '',
   }
 
-  // handleGeographyClick(geography) {
-  //   // geography looks something like this:
-  //   // { type: "Feature",  properties: {...}, geometry: {...} }
-  //   const path = geoPath().projection(this.projection())
-  //   const centroid = this.projection().invert(path.centroid(geography))
-  //   this.setState({
-  //     center: centroid,
-  //     currentCountry: geography.properties.iso_a3,
-  //   })
-  //
-  // }
-
   render() {
     return (
       <div>

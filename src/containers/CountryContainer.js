@@ -52,14 +52,24 @@ class CountryContainer extends Component {
   render() {
     return(
       <>
-      <CountryBasic countryInfo={this.state.countryInfo}  />
-      {this.state.wikiLoading && <h3>Wikipedia Loading</h3>}
-      {!this.state.wikiLoading && <WikiView wikiInfo={this.state.wikiInfo}  />}
-      <div className="countryGlobe">
-        <MapView className="MapView" mapCenter={this.state.countryInfo.latlng} />
+      <div className="countryGrid">
+        <div className="box box1">
+          <CountryBasic countryInfo={this.state.countryInfo}  />
+        </div>
+        <div className="box box2">
+          {this.state.wikiLoading && <h3>Wikipedia Loading</h3>}
+          {!this.state.wikiLoading && <WikiView wikiInfo={this.state.wikiInfo}  />}
+        </div>
+        <div className="box box3">
+          <div className="countryGlobe">
+            <MapView className="MapView" mapCenter={this.state.countryInfo.latlng} />
+          </div>
+        </div>
+        <div className="box box4">
+          {this.state.infoLoading && <h3>Forex Loading</h3>}
+          {!this.state.infoLoading && <CurrencyExchangeContainer  currency={this.state.countryInfo.currencies} />}
+        </div>
       </div>
-      {this.state.infoLoading && <h3>Forex Loading</h3>}
-      {!this.state.infoLoading && <CurrencyExchangeContainer  currency={this.state.countryInfo.currencies} />}
       </>
     )
   }

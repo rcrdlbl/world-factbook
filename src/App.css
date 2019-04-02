@@ -102,6 +102,39 @@ select {
   text-decoration: none;
 }
 
+.countryGrid {
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.countryGrid > div {
+  display: flex;
+  flex-basis: calc(50% - 40px);
+  justify-content: center;
+  flex-direction: column;
+}
+
+.box1 {
+  border-style: none solid solid none;
+  border-width: thin;
+}
+
+.box2 {
+  border-bottom: solid;
+  border-width: thin;
+}
+
+.box3 {
+  border-right: solid;
+  border-width: thin;
+}
+
+.box4 {
+
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
