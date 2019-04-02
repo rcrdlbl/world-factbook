@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'Avara_Bold';
+    src:    url('static/fonts/AvaraBold/Avara-Bold_web.eot');
+    src:    url('static/fonts/AvaraBold/Avara-Bold_web.eot?#iefix') format('embedded-opentype'),
+            url('static/fonts/AvaraBold/Avara-Bold_web.woff') format('woff'),
+            url('static/fonts/AvaraBold/Avara-Bold_web.woff2') format('woff2'),
+            url('static/fonts/AvaraBold/Avara-Bold_web.ttf') format('truetype'),
+            url('static/fonts/AvaraBold/Avara-Bold_web.svg#svgFontName') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .focused {
   fill: #33CC33;
@@ -14,7 +25,12 @@ div {
 
 .countryBasic {
   transform: skewY(15deg);
-  margin-top: 3rem;
+  margin-top: 7rem;
+  font-family: "Avara_Bold"
+}
+
+.searchLink {
+  color: #637079;
 }
 
 .countryflag {
