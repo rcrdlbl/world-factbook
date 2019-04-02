@@ -63,6 +63,7 @@ class CountryContainer extends Component {
         <div className="box box3">
           <div className="countryGlobe">
             <MapView className="MapView" mapCenter={this.state.countryInfo.latlng} />
+            <img className="reticle" alt="" src={reticle}></img>
           </div>
         </div>
         <div className="box box4">
