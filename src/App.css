@@ -91,6 +91,17 @@ select {
   height: 100%
 }
 
+.allCountries a {
+  color: #000;
+  font-size: 2.25rem;
+  font-weight: bolder;
+}
+
+.allCountries a:hover {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
