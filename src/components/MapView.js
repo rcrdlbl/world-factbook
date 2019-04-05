@@ -11,7 +11,7 @@ import {
 
 const mapStyles = {
   width: "100%",
-  maxWidth: 980,
+  maxWidth: "100%",
   margin: "0 auto",
 }
 

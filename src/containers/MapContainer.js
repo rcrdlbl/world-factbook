@@ -12,7 +12,7 @@ class MapContainer extends Component {
     return (
       <div>
         <SearchView />
-        <MapView></MapView>
+        <MapView className="frontMap"></MapView>
       </div>
     )
   }
