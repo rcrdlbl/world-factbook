@@ -22,6 +22,7 @@ class CountryContainer extends Component {
     return found[0].name
   }
 
+
   componentDidMount() {
     this.fetchData()
     this.fetchWikiData()
