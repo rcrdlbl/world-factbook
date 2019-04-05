@@ -131,6 +131,18 @@ div {
   align-self: center;
 }
 
+.currencyGrid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  font-family: "IBM Plex Mono";
+  text-align: center;
+}
+
+.exchangeHistory {
+  border-top: 1px solid #637079;
+  grid-column: 1 / span 2;
+}
+
 
 /* for react-autosuggest */
 .react-autosuggest__container {
