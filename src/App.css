@@ -143,6 +143,18 @@ div {
   grid-column: 1 / span 2;
 }
 
+.creditsLink {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-family: 'IBM Plex Mono';
+  color: #637079;
+}
+
+.creditsLink a {
+  font-family: 'IBM Plex Mono';
+  color: #637079;
+}
 
 /* for react-autosuggest */
 .react-autosuggest__container {
