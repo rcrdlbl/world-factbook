@@ -3,6 +3,7 @@ import Autosuggest from 'react-autosuggest'
 import countryNames from '../static/country-names'
 
 
+
 const getSuggestions = value => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
@@ -70,11 +71,6 @@ class SearchView extends Component {
         highlightFirstSuggestion={true}
         renderSuggestion={renderSuggestion}
         inputProps={inputProps}
-        theme={{
-          suggestionHighlighted: {
-            color: 'red'
-          }
-        }}
         onSuggestionSelected={this.onSuggestionSelected}
       />
     )

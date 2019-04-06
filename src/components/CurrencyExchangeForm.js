@@ -68,11 +68,6 @@ class CurrencyExchangeForm extends Component {
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
         getSuggestionValue={getSuggestionValue}
         renderSuggestion={renderSuggestion}
-        theme={{
-          suggestionHighlighted: {
-            color: 'red'
-          }
-        }}
         onSuggestionSelected={this.onSuggestionSelected}
         inputProps={inputProps}
       />

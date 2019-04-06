@@ -82,7 +82,7 @@ div {
 }
 
 .box1 {
-  border-style: none solid solid none;
+  border-style: none solid none none;
   border-width: thin;
 }
 
@@ -125,4 +125,96 @@ div {
 
 .wikiLogo {
   max-height: 2.25rem;
+}
+
+.frontMap {
+  align-self: center;
+}
+
+.currencyGrid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  font-family: "IBM Plex Mono";
+  text-align: center;
+}
+
+.exchangeHistory {
+  border-top: 1px solid #637079;
+  grid-column: 1 / span 2;
+}
+
+.creditsLink {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-family: 'IBM Plex Mono';
+  color: #637079;
+}
+
+.creditsLink a {
+  font-family: 'IBM Plex Mono';
+  color: #637079;
+}
+
+/* for react-autosuggest */
+.react-autosuggest__container {
+  position: relative;
+  display: block;
+}
+
+.react-autosuggest__input {
+  width: 100%;
+  height: 30px;
+  padding: 10px 20px;
+  text-align: center;
+  font-family: 'IBM Plex Mono';
+  background-color: #CCD7DD;
+  color: #637079;
+  font-weight: 300;
+  font-size: 16px;
+  border: 1px solid #637079;
+}
+
+.react-autosuggest__input--focused {
+  outline: none;
+}
+
+.react-autosuggest__input--open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+}
+
+.react-autosuggest__suggestions-container--open {
+  display: block;
+  position: absolute;
+  top: 51px;
+  width: 100%;
+  border: 1px solid #637079;
+  background-color: #CCD7DD;
+  font-family: 'IBM Plex Mono';
+  text-align: center;
+  font-weight: 300;
+  font-size: 16px;
+  z-index: 2;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: #CCD7DD;
+  color: #FF2600;
+  border: 1px solid #FF2600;
 }

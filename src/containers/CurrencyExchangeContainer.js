@@ -35,14 +35,19 @@ class CurrencyExchangeContainer extends Component {
 
   render() {
     return (
-      <div>
-        <h2>1</h2>
-        <p>{this.props.currency[0].name}</p>
-        <p>equals</p>
-        <ExchangeView userCurrencyName={this.state.userCurrencyName} exchange={this.props.exchange} />
-        <CurrencyExchangeForm onCurrencyFormSubmit={this.onCurrencyFormSubmit} />
-        <p>Exchange History</p>
-        {this.renderPreviousExchanges()}
+      <div className="currencyGrid">
+        <div>
+          <h2>1</h2>
+          <p>{this.props.currency[0].name}</p>
+        </div>
+        <div>
+          <ExchangeView userCurrencyName={this.state.userCurrencyName} exchange={this.props.exchange} />
+          <CurrencyExchangeForm onCurrencyFormSubmit={this.onCurrencyFormSubmit} />
+        </div>
+        <div className="exchangeHistory">
+          <p>Exchange History</p>
+          {this.renderPreviousExchanges()}
+        </div>
       </div>
     )
   }

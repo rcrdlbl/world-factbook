@@ -3,8 +3,9 @@ import CountryBasic from '../components/CountryBasic'
 import WikiView from '../components/WikiView'
 import countryNames from '../static/country-names'
 import MapView from '../components/MapView'
-import reticle from '../static/reticle.svg'
+import reticle from '../static/reticle_animated.svg'
 import CurrencyExchangeContainer from './CurrencyExchangeContainer'
+import ReactSVG from 'react-svg'
 
 
 class CountryContainer extends Component {
@@ -21,6 +22,7 @@ class CountryContainer extends Component {
     )
     return found[0].name
   }
+
 
   componentDidMount() {
     this.fetchData()
@@ -63,7 +65,8 @@ class CountryContainer extends Component {
         <div className="box box3">
           <div className="countryGlobe">
             <MapView className="MapView" mapCenter={this.state.countryInfo.latlng} />
-            <img className="reticle" alt="" src={reticle}></img>
+            <ReactSVG src={reticle} svgClassName="reticle" />
+            />
           </div>
         </div>
         <div className="box box4">

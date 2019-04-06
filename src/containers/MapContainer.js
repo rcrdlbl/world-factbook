@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MapView from '../components/MapView'
 import SearchView from '../components/SearchView'
+import { Link } from 'react-router-dom'
 
 
 class MapContainer extends Component {
@@ -12,7 +13,8 @@ class MapContainer extends Component {
     return (
       <div>
         <SearchView />
-        <MapView></MapView>
+        <MapView className="frontMap"></MapView>
+        <div className='creditsLink'>WORLD FACTBOOK <Link to='/credits'>credits</Link> <a href='http://przemyslaw.org'>przemyslaw.org</a></div>
       </div>
     )
   }
